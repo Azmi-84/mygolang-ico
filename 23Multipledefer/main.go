@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"os"
 )
@@ -15,6 +16,10 @@ func main() {
 	if err := fileCopy("sample.txt", "sample-copy.txt"); err != nil {
 		log.Fatal("failed to copy file: ", err)
 	}
+
+	readFile("./sample-copy.txt")
+	readFile("./sample.txt")
+
 }
 
 func write(fileName string, text string) error {
@@ -55,4 +60,14 @@ func fileCopy(source string, destination string) error {
 	}
 
 	return dst.Close()
+}
+
+func readFile(filename string) {
+	dataByte, err := ioutil.ReadFile(filename)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Text data inside the file is: ", dataByte)
 }

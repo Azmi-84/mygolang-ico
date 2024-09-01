@@ -22,10 +22,10 @@ type BruteForceState struct {
 }
 
 func main() {
-	target := flag.String("target", "!@#%$%^&&******DSJKLDSLJKSDLKJDSKJLSDJKLDSJKLSEUIWUIO", "Target password to brute force")
+	target := flag.String("target", "123456", "Target password to brute force")
 	charset := flag.String("charset", "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_.,", "Character set for brute force")
-	maxLength := flag.Int("length", 42, "Maximum password length to attempt")
-	concurrency := flag.Int("concurrency", 10, "Number of goroutines for parallel attempts")
+	maxLength := flag.Int("length", 7, "Maximum password length to attempt")
+	concurrency := flag.Int("concurrency", 20, "Number of goroutines for parallel attempts")
 	flag.Parse()
 
 	config := Config{
