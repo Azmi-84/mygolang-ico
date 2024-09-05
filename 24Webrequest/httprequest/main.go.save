@@ -1,7 +1,0 @@
-package main
-import (
-"io/ioutil"
-)
-func main() {
-mux.Handler("/", func(w http.ResponseWriter, r *http.Request)) 
-}

@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-const serverPort = 3232
+const serverPort = 1212
 
 func main() {
 	go func() {
